@@ -1,13 +1,10 @@
 # Học Git & GitHub
 
-**Trạng thái:** Đang học. Các ô bên dưới sẽ được đánh dấu sau khi mình thực hành xong.
+**Trạng thái:** Đang học.
 
 Các lệnh thao tác file trong phần đầu dùng cú pháp **Git Bash** (cũng phù hợp với terminal trên macOS/Linux). Trên Windows, mở Git Bash để chạy đúng ví dụ; PowerShell có một số lệnh và tham số khác.
 
 ## 1. Làm quen với file, thư mục và terminal
-
-- [ ] Di chuyển giữa các thư mục, tạo file và xem nội dung file.
-- [ ] Thử thay đổi và so sánh hai file.
 
 | Lệnh | Công dụng |
 | --- | --- |
@@ -29,9 +26,6 @@ Các lệnh thao tác file trong phần đầu dùng cú pháp **Git Bash** (cũ
 
 ## 2. Hiểu Git và cấu hình ban đầu
 
-- [ ] Phân biệt working directory, staging area và commit.
-- [ ] Kiểm tra phiên bản Git và cấu hình tên, email.
-
 **Thuật ngữ:** repository (repo) là kho lưu trữ; commit là một mốc ghi lại thay đổi; branch là nhánh phát triển; `main` hoặc `master` thường là tên nhánh chính. `develop` là tên nhánh do một số nhóm sử dụng. Merge và rebase đều kết hợp lịch sử giữa các nhánh, nhưng theo cách khác nhau.
 
 | Lệnh | Công dụng |
@@ -43,14 +37,11 @@ Các lệnh thao tác file trong phần đầu dùng cú pháp **Git Bash** (cũ
 | `git config --global user.name "Ten cua ban"` | Đặt tên tác giả cho các repo của người dùng hiện tại. |
 | `git config --global user.email "email@example.com"` | Đặt email tác giả cho các repo của người dùng hiện tại. |
 | `git config --local user.name "Ten cua ban"` | Đặt tên chỉ cho repo hiện tại. |
+| `git config --local user.email "email@example.com"` | Đặt email chỉ cho repo hiện tại. |
 
 Phạm vi cấu hình: `--local` cho repo hiện tại, `--global` cho người dùng hiện tại, `--system` cho toàn máy. `git config --list` là lệnh **xem** cấu hình; khi **đặt** một giá trị, dùng `git config --<pham-vi> <ten-cau-hinh> <gia-tri>`.
 
 ## 3. Tạo repo và lưu thay đổi ở máy
-
-- [ ] Tạo hoặc clone một repo thử nghiệm.
-- [ ] Sửa file, xem diff, stage và tạo commit.
-- [ ] Đọc lịch sử commit.
 
 | Lệnh | Công dụng |
 | --- | --- |
@@ -70,9 +61,6 @@ Luồng cơ bản: **working directory → `git add` → staging area → `git c
 
 ## 4. Làm việc với remote
 
-- [ ] Xem remote và phân biệt fetch, pull, push.
-- [ ] Push một nhánh thử nghiệm lên GitHub.
-
 | Lệnh | Công dụng |
 | --- | --- |
 | `git remote -v` | Xem tên và địa chỉ các remote, thường có `origin`. |
@@ -84,9 +72,6 @@ Luồng cơ bản: **working directory → `git add` → staging area → `git c
 `git init --bare <ten-thu-muc>` tạo repo không có working directory, thường dùng làm remote tự quản lý. Chưa cần lệnh này để học GitHub cơ bản.
 
 ## 5. Làm việc với nhánh và merge
-
-- [ ] Tạo nhánh, chuyển nhánh và xem sự khác biệt giữa các nhánh.
-- [ ] Thử merge hoặc mở pull request cho nội dung muốn giữ lại.
 
 | Lệnh | Công dụng |
 | --- | --- |
@@ -103,9 +88,6 @@ Trong repo này, `learning/git-basics` giữ ghi chép; `practice/git-basics` d�
 
 ## 6. Học sau khi đã vững luồng cơ bản
 
-- [ ] Thử rebase và xử lý conflict trong repo thử nghiệm.
-- [ ] Phân biệt các chế độ reset trước khi sử dụng.
-
 | Lệnh | Công dụng |
 | --- | --- |
 | `git rebase <ten-nhanh>` | Đặt lại các commit riêng của nhánh hiện tại lên đầu nhánh được chỉ định; có thể viết lại lịch sử commit. |
@@ -116,7 +98,3 @@ Trong repo này, `learning/git-basics` giữ ghi chép; `practice/git-basics` d�
 | `git reset --hard <commit-hash>` | Chuyển nhánh về commit đó, đặt lại cả staging area và file đã theo dõi; các thay đổi chưa commit có thể bị mất. |
 
 Chỉ thử `reset --hard`, rebase và xóa nhánh trên nhánh thực hành khi đã hiểu tác động. Tránh viết lại lịch sử của nhánh mà người khác đang dùng.
-
-## Cách ghi chép tiếp
-
-Sau mỗi buổi học, ghi: **đã làm gì**, **lệnh đã dùng**, **kết quả**, **lỗi gặp phải** và **điều cần nhớ**. Đánh dấu ô đã thực hành, commit ghi chép trên `learning/git-basics`, rồi mở pull request vào `main` khi phần này đã sẵn sàng.
