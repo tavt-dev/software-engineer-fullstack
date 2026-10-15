@@ -121,6 +121,8 @@ trong URL này có:
 
 ## OSI
 
+<img src="../img/1792071533945_6099000326064343182_g2011408275649891011_ffd976e855c48b3d75a4d7e0f02ba57f.jpg" alt="Sơ đồ 7 tầng của mô hình OSI" width="650">
+
 và OSI là 1 mô hình 7 tầng, dùng để mô tả cách dữ liệu đi từ ứng dụng xuống mạng, truyền đi rồi sang bên kia và được mở ra lại
 
 -> Khi dữ liệu đi từ app của mình ra ngoài mạng, nó không đi thẳng 1 phát từ code sang internet, nó đi qua nhiều lớp. Mỗi lớp có trách nhiệm khác nhau
