@@ -1,26 +1,122 @@
 # Học Git & GitHub
 
-**Trạng thái:** Đang học.
+**Trạng thái:** Đang học. Các ô bên dưới sẽ được đánh dấu sau khi mình thực hành xong.
 
-Đây là nơi mình ghi lại các lệnh đã thực hành, lỗi gặp phải và cách giải quyết. Mình sẽ cập nhật nội dung theo đúng tiến độ học thực tế.
+Các lệnh thao tác file trong phần đầu dùng cú pháp **Git Bash** (cũng phù hợp với terminal trên macOS/Linux). Trên Windows, mở Git Bash để chạy đúng ví dụ; PowerShell có một số lệnh và tham số khác.
 
-## Nội dung cần thực hành
+## 1. Làm quen với file, thư mục và terminal
 
-- [ ] Kiểm tra thay đổi với `git status` và `git diff`.
-- [ ] Chọn file bằng `git add`, lưu một mốc bằng `git commit`.
-- [ ] Tạo và chuyển nhánh bằng `git switch`.
-- [ ] Đưa nhánh lên GitHub bằng `git push`.
-- [ ] Mở pull request, xem thay đổi và merge vào `main`.
+- [ ] Di chuyển giữa các thư mục, tạo file và xem nội dung file.
+- [ ] Thử thay đổi và so sánh hai file.
 
-## Ghi chép
+| Lệnh | Công dụng |
+| --- | --- |
+| `pwd` | Xem đường dẫn thư mục hiện tại. |
+| `cd <thu-muc>` | Đi vào một thư mục. Dùng dấu nháy nếu tên có khoảng trắng. |
+| `cd ..` | Quay về thư mục cha. |
+| `ls` | Liệt kê file và thư mục; trên Windows CMD/PowerShell có thể dùng `dir`. |
+| `mkdir <ten-thu-muc>` | Tạo thư mục mới, ví dụ `mkdir ThuMuc1`. |
+| `touch <ten-file>` | Tạo file rỗng hoặc cập nhật thời gian sửa file, ví dụ `touch 'vi du.txt'`. |
+| `echo "noi dung" > <ten-file>` | Ghi nội dung vào file, **ghi đè** nội dung cũ. |
+| `echo "noi dung" >> <ten-file>` | Ghi thêm nội dung vào cuối file. |
+| `cat <ten-file>` | Hiển thị nội dung file. |
+| `diff <file-1> <file-2>` | So sánh nội dung hai file. |
+| `rm <ten-file>` | Xóa file. |
+| `rm -d <thu-muc>` | Xóa thư mục rỗng. |
+| `rm -r <thu-muc>` | Xóa thư mục và nội dung bên trong; kiểm tra đường dẫn trước khi chạy. |
 
-Khi học một chủ đề, mình sẽ bổ sung: **đã làm gì**, **lệnh đã dùng**, **kết quả**, và **điều cần nhớ**.
+> Trong PowerShell, `touch` và `rm -d` không dùng giống Git Bash. Có thể tạo file bằng `New-Item <ten-file> -ItemType File` và xóa thư mục rỗng bằng `Remove-Item <thu-muc>`.
 
-## Quy trình thực hành trong repo này
+## 2. Hiểu Git và cấu hình ban đầu
 
-1. Tạo nhánh riêng cho phần đang học, ví dụ `learning/git-basics`.
-2. Thêm ghi chú hoặc bài thực hành, rồi commit những file liên quan.
-3. Push nhánh lên GitHub và mở pull request vào `main`.
-4. Merge khi nội dung đã được kiểm tra và muốn lưu vào lộ trình chính.
+- [ ] Phân biệt working directory, staging area và commit.
+- [ ] Kiểm tra phiên bản Git và cấu hình tên, email.
 
-Sau khi merge, tạo nhánh mới từ `main` cho chủ đề tiếp theo. Không cần tạo một nhánh cho từng lệnh Git.
+**Thuật ngữ:** repository (repo) là kho lưu trữ; commit là một mốc ghi lại thay đổi; branch là nhánh phát triển; `main` hoặc `master` thường là tên nhánh chính. `develop` là tên nhánh do một số nhóm sử dụng. Merge và rebase đều kết hợp lịch sử giữa các nhánh, nhưng theo cách khác nhau.
+
+| Lệnh | Công dụng |
+| --- | --- |
+| `git --version` | Xem phiên bản Git. |
+| `git --help` | Xem trợ giúp và các lệnh Git thường dùng. |
+| `git help <lenh>` | Xem hướng dẫn của một lệnh, ví dụ `git help commit`. |
+| `git config --list` | Xem cấu hình Git đang áp dụng. |
+| `git config --global user.name "Ten cua ban"` | Đặt tên tác giả cho các repo của người dùng hiện tại. |
+| `git config --global user.email "email@example.com"` | Đặt email tác giả cho các repo của người dùng hiện tại. |
+| `git config --local user.name "Ten cua ban"` | Đặt tên chỉ cho repo hiện tại. |
+
+Phạm vi cấu hình: `--local` cho repo hiện tại, `--global` cho người dùng hiện tại, `--system` cho toàn máy. `git config --list` là lệnh **xem** cấu hình; khi **đặt** một giá trị, dùng `git config --<pham-vi> <ten-cau-hinh> <gia-tri>`.
+
+## 3. Tạo repo và lưu thay đổi ở máy
+
+- [ ] Tạo hoặc clone một repo thử nghiệm.
+- [ ] Sửa file, xem diff, stage và tạo commit.
+- [ ] Đọc lịch sử commit.
+
+| Lệnh | Công dụng |
+| --- | --- |
+| `git init <ten-thu-muc>` | Tạo repo Git mới trong thư mục chỉ định. |
+| `git clone <url-hoac-duong-dan> [ten-thu-muc]` | Sao chép repo có sẵn về máy; tên thư mục đích là tùy chọn. |
+| `git status` | Xem file đã sửa, file đang stage và nhánh hiện tại. |
+| `git diff` | So sánh **working directory** với **staging area**; không hiển thị thay đổi đã stage. |
+| `git diff --staged` | So sánh **staging area** với commit hiện tại (`HEAD`). |
+| `git diff HEAD` | Xem toàn bộ thay đổi của file đã theo dõi so với `HEAD`. |
+| `git add <ten-file>` | Đưa file được chọn vào staging area. |
+| `git add .` | Stage các thay đổi bên dưới thư mục hiện tại; xem lại `git status` trước khi commit. |
+| `git commit -m "Mo ta thay doi"` | Tạo commit từ những thay đổi đã stage. |
+| `git log` | Xem lịch sử commit đầy đủ. |
+| `git log --oneline` | Xem lịch sử commit dạng ngắn. |
+
+Luồng cơ bản: **working directory → `git add` → staging area → `git commit` → lịch sử repo**. `HEAD` thường trỏ tới commit hiện tại của nhánh đang đứng.
+
+## 4. Làm việc với remote
+
+- [ ] Xem remote và phân biệt fetch, pull, push.
+- [ ] Push một nhánh thử nghiệm lên GitHub.
+
+| Lệnh | Công dụng |
+| --- | --- |
+| `git remote -v` | Xem tên và địa chỉ các remote, thường có `origin`. |
+| `git fetch origin` | Tải thông tin commit và nhánh mới từ remote; không tự gộp vào nhánh hiện tại. |
+| `git pull origin main` | Lấy thay đổi từ `origin/main` và tích hợp vào nhánh hiện tại theo cấu hình Git. |
+| `git push -u origin <ten-nhanh>` | Push nhánh lần đầu và đặt nhánh remote làm upstream. |
+| `git push` | Push các commit tiếp theo khi nhánh đã có upstream. |
+
+`git init --bare <ten-thu-muc>` tạo repo không có working directory, thường dùng làm remote tự quản lý. Chưa cần lệnh này để học GitHub cơ bản.
+
+## 5. Làm việc với nhánh và merge
+
+- [ ] Tạo nhánh, chuyển nhánh và xem sự khác biệt giữa các nhánh.
+- [ ] Thử merge hoặc mở pull request cho nội dung muốn giữ lại.
+
+| Lệnh | Công dụng |
+| --- | --- |
+| `git branch` | Liệt kê các nhánh local; dấu `*` chỉ nhánh hiện tại. |
+| `git branch <ten-nhanh>` | Tạo nhánh mới nhưng chưa chuyển sang nhánh đó. |
+| `git switch -c <ten-nhanh>` | Tạo và chuyển sang nhánh mới. |
+| `git switch <ten-nhanh>` | Chuyển sang nhánh đã có. Lệnh cũ tương đương là `git checkout <ten-nhanh>`. |
+| `git merge <ten-nhanh>` | Gộp nhánh được chỉ định vào **nhánh hiện tại**. |
+| `git branch -d <ten-nhanh>` | Xóa nhánh local đã merge. |
+| `git push origin --delete <ten-nhanh>` | Xóa nhánh trên remote. |
+| `git switch --detach <commit-hash>` | Xem repo tại một commit cũ mà không chuyển nhánh; `git checkout <commit-hash>` cũng vào trạng thái này. |
+
+Trong repo này, `learning/git-basics` giữ ghi chép; `practice/git-basics` dùng để thử lệnh. Chỉ merge nội dung muốn lưu lâu dài vào `main`. Sau khi xem commit cũ, dùng `git switch <ten-nhanh>` để quay về nhánh làm việc.
+
+## 6. Học sau khi đã vững luồng cơ bản
+
+- [ ] Thử rebase và xử lý conflict trong repo thử nghiệm.
+- [ ] Phân biệt các chế độ reset trước khi sử dụng.
+
+| Lệnh | Công dụng |
+| --- | --- |
+| `git rebase <ten-nhanh>` | Đặt lại các commit riêng của nhánh hiện tại lên đầu nhánh được chỉ định; có thể viết lại lịch sử commit. |
+| `git rebase --continue` | Tiếp tục sau khi đã xử lý conflict và stage các file đã sửa. |
+| `git rebase --skip` | Bỏ qua commit hiện tại trong quá trình rebase; có thể làm mất thay đổi của commit đó. |
+| `git reset <commit-hash>` | Mặc định là `--mixed`: chuyển nhánh về commit đó, bỏ stage, giữ thay đổi trong working directory. |
+| `git reset --soft <commit-hash>` | Chuyển nhánh về commit đó, giữ nguyên staging area và working directory. |
+| `git reset --hard <commit-hash>` | Chuyển nhánh về commit đó, đặt lại cả staging area và file đã theo dõi; các thay đổi chưa commit có thể bị mất. |
+
+Chỉ thử `reset --hard`, rebase và xóa nhánh trên nhánh thực hành khi đã hiểu tác động. Tránh viết lại lịch sử của nhánh mà người khác đang dùng.
+
+## Cách ghi chép tiếp
+
+Sau mỗi buổi học, ghi: **đã làm gì**, **lệnh đã dùng**, **kết quả**, **lỗi gặp phải** và **điều cần nhớ**. Đánh dấu ô đã thực hành, commit ghi chép trên `learning/git-basics`, rồi mở pull request vào `main` khi phần này đã sẵn sàng.
