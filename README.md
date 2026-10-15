@@ -28,6 +28,10 @@ Theo sơ đồ chương trình, lộ trình dự kiến kéo dài **15 tháng** 
 
 Mình đang học Git song song với giai đoạn DevOps. Ghi chú, bài thực hành và tiến độ được lưu tại [phần học Git](git/README.md).
 
+## Học mạng máy tính
+
+Ghi chép về IP, domain, DNS, URL, port, mô hình OSI, TCP/UDP và luồng truy cập web được lưu tại [Mạng máy tính cơ bản](network/README.md).
+
 ## Sơ đồ lộ trình
 
 <img src="img/1790222497490_7480965901465276155_g2011408275649891011_f98cff504314136bfe5dafa11eee26ce.jpg" alt="Sơ đồ lộ trình Software Engineer – Fullstack Developer K6" width="600">
