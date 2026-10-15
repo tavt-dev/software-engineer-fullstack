@@ -27,4 +27,3 @@ Theo sơ đồ chương trình, lộ trình dự kiến kéo dài **15 tháng** 
 ## Sơ đồ lộ trình
 
 <img src="img/1790222497490_7480965901465276155_g2011408275649891011_f98cff504314136bfe5dafa11eee26ce.jpg" alt="Sơ đồ lộ trình Software Engineer – Fullstack Developer K6" width="600">
-
