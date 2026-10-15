@@ -24,6 +24,10 @@ Theo sơ đồ chương trình, lộ trình dự kiến kéo dài **15 tháng** 
 | 7. Technology Certification | Chuẩn bị và hoàn thành các chứng chỉ công nghệ | Chưa bắt đầu |
 | 8. Freelance & Monetization | Portfolio, tìm khách hàng và phát triển nguồn thu nhập | Chưa bắt đầu |
 
+## Học Git & GitHub
+
+Mình đang học Git song song với giai đoạn DevOps. Ghi chú, bài thực hành và tiến độ được lưu tại [phần học Git](git/README.md).
+
 ## Sơ đồ lộ trình
 
 <img src="img/1790222497490_7480965901465276155_g2011408275649891011_f98cff504314136bfe5dafa11eee26ce.jpg" alt="Sơ đồ lộ trình Software Engineer – Fullstack Developer K6" width="600">
