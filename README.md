@@ -32,6 +32,10 @@ Mình đang học Git song song với giai đoạn DevOps. Ghi chú, bài thực
 
 Ghi chép về IP, domain, DNS, URL, port, mô hình OSI, TCP/UDP và luồng truy cập web được lưu tại [Mạng máy tính cơ bản](network/README.md).
 
+## Học Linux
+
+Ghi chép về lý do Software Engineer cần học Linux, hệ điều hành, kernel, bản phân phối, máy ảo và cách ứng dụng vận hành trên server được lưu tại [phần học Linux](linux/README.md).
+
 ## Sơ đồ lộ trình
 
 <img src="img/1790222497490_7480965901465276155_g2011408275649891011_f98cff504314136bfe5dafa11eee26ce.jpg" alt="Sơ đồ lộ trình Software Engineer – Fullstack Developer K6" width="600">
