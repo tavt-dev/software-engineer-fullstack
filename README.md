@@ -34,4 +34,4 @@ Ghi chép về IP, domain, DNS, URL, port, mô hình OSI, TCP/UDP và luồng tr
 
 ## Sơ đồ lộ trình
 
-<img src="img/1790222497490_7480965901465276155_g2011408275649891011_f98cff504314136bfe5dafa11eee26ce.jpg" alt="Sơ đồ lộ trình Software Engineer – Fullstack Developer K6" width="600">
+<img src="img/software-engineer-fullstack-roadmap.jpg" alt="Sơ đồ lộ trình Software Engineer – Fullstack Developer K6" width="600">
