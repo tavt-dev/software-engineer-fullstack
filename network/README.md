@@ -1,6 +1,6 @@
 # Mạng máy tính
 
-<img src="../img/1791854717932_6099000326064343182_g2011408275649891011_55777a554e604ae5515d9f5b52a23e43.jpg" alt="Sơ đồ nền tảng mạng máy tính" width="650">
+<img src="../img/computer-networking-overview.jpg" alt="Sơ đồ nền tảng mạng máy tính" width="650">
 
 ## 1. IP là gì
 
@@ -117,11 +117,11 @@ trong URL này có:
 - 443 là port
 - /login là path
 
-<img src="../img/1791898896513_6099000326064343182_g2011408275649891011_fc74a8d1640011b56f852e78369de38e.jpg" alt="Sơ đồ các thành phần của URL" width="560">
+<img src="../img/url-anatomy.jpg" alt="Sơ đồ các thành phần của URL" width="560">
 
 ## OSI
 
-<img src="../img/1792071533945_6099000326064343182_g2011408275649891011_ffd976e855c48b3d75a4d7e0f02ba57f.jpg" alt="Sơ đồ 7 tầng của mô hình OSI" width="650">
+<img src="../img/osi-seven-layers.jpg" alt="Sơ đồ 7 tầng của mô hình OSI" width="650">
 
 và OSI là 1 mô hình 7 tầng, dùng để mô tả cách dữ liệu đi từ ứng dụng xuống mạng, truyền đi rồi sang bên kia và được mở ra lại
 
