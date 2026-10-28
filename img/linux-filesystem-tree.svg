@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" role="img" aria-labelledby="title desc">
+  <title id="title">Cây thư mục Linux</title>
+  <desc id="desc">Thư mục gốc / chứa sbin, usr, dev, var, etc và home. Thư mục usr chứa bin, sbin, lib và share/man. Thư mục home chứa hai thư mục người dùng ví dụ.</desc>
+  <rect width="1200" height="450" fill="#ffffff"/>
+  <g fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round">
+    <path d="M600 86 L105 178 M600 86 L295 178 M600 86 L485 178 M600 86 L675 178 M600 86 L865 178 M600 86 L1065 178"/>
+    <path d="M295 234 L102 335 M295 234 L257 335 M295 234 L412 335 M295 234 L590 335"/>
+    <path d="M1065 234 L925 335 M1065 234 L1105 335"/>
+  </g>
+  <g fill="#f8fafc" stroke="#334155" stroke-width="2">
+    <rect x="540" y="30" width="120" height="56" rx="8" fill="#dbeafe"/>
+    <rect x="45" y="178" width="120" height="56" rx="8"/>
+    <rect x="235" y="178" width="120" height="56" rx="8"/>
+    <rect x="425" y="178" width="120" height="56" rx="8"/>
+    <rect x="615" y="178" width="120" height="56" rx="8"/>
+    <rect x="805" y="178" width="120" height="56" rx="8"/>
+    <rect x="995" y="178" width="140" height="56" rx="8"/>
+    <rect x="40" y="335" width="125" height="56" rx="8"/>
+    <rect x="195" y="335" width="125" height="56" rx="8"/>
+    <rect x="350" y="335" width="125" height="56" rx="8"/>
+    <rect x="505" y="335" width="170" height="56" rx="8"/>
+    <rect x="850" y="335" width="150" height="56" rx="8"/>
+    <rect x="1030" y="335" width="150" height="56" rx="8"/>
+  </g>
+  <g fill="#0f172a" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">
+    <text x="600" y="58" font-weight="bold">/</text>
+    <text x="105" y="206">/sbin</text>
+    <text x="295" y="206">/usr</text>
+    <text x="485" y="206">/dev</text>
+    <text x="675" y="206">/var</text>
+    <text x="865" y="206">/etc</text>
+    <text x="1065" y="206">/home</text>
+    <text x="102" y="363">bin</text>
+    <text x="257" y="363">sbin</text>
+    <text x="412" y="363">lib</text>
+    <text x="590" y="363">share/man</text>
+    <text x="925" y="363">user01</text>
+    <text x="1105" y="363">user02</text>
+  </g>
+  <text x="600" y="425" fill="#475569" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">Sơ đồ rút gọn: các thư mục khác được giải thích trong phần bên dưới.</text>
+</svg>
