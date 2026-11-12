@@ -2,100 +2,130 @@
 
 [← Mục lục](README.md) · [← Hệ thống tệp](02-he-thong-tep.md) · [Tiếp: Điều hướng →](04-dieu-huong.md)
 
-## Mở Terminal
+**Terminal** là ứng dụng để làm việc với máy tính bằng dòng lệnh. Bạn nhập lệnh trong Terminal; shell, chẳng hạn Bash, đọc và thực hiện lệnh đó.
 
-Trên Ubuntu Desktop, tìm **Terminal** hoặc **Terminal Emulator** trong danh sách ứng dụng (Dash/Activities). Cách mở có thể khác tùy bản phân phối và môi trường desktop.
+## Mở và thoát Terminal
 
-## Thoát Terminal
+- **Dùng chuột:** Trên Ubuntu Desktop, mở danh sách ứng dụng, tìm và chọn **Terminal**.
+- **Dùng bàn phím:** Nhấn `Ctrl + Alt + T`.
+- Gõ lệnh rồi nhấn `Enter` để chạy.
+- Nhập `exit` để kết thúc phiên shell hiện tại.
 
-Nhập `exit` để kết thúc phiên shell hiện tại. Cửa sổ Terminal thường đóng nếu đó là phiên cuối cùng.
+## Đọc dấu nhắc Terminal
 
-## Phím tắt thường dùng
+Ví dụ dòng chờ nhập lệnh (prompt):
 
-| Phím tắt | Tác dụng |
+```text
+ta-van-tien@ta-van-tien-VMware-Virtual-Platform:~/Desktop$
+```
+
+| Thành phần | Ý nghĩa |
 | --- | --- |
-| `Ctrl + Alt + T` | Mở Terminal trên Ubuntu Desktop và một số môi trường khác. |
-| `Ctrl + Shift + T` | Mở tab mới trong nhiều ứng dụng Terminal. |
-| `Ctrl + D` | Kết thúc phiên shell hiện tại khi đang ở dấu nhắc trống. |
-| `Ctrl + C` | Gửi tín hiệu ngắt đến tác vụ đang chạy ở phía trước; thường dùng để dừng lệnh. |
+| `ta-van-tien` trước dấu `@` | Tên tài khoản đang dùng. |
+| `ta-van-tien-VMware-Virtual-Platform` | Tên máy (hostname). |
+| `~/Desktop` | Thư mục hiện tại; `~` là thư mục cá nhân của bạn. |
+| `$` | Theo quy ước, phiên shell của người dùng thường. |
+| `#` | Theo quy ước, phiên shell của `root`. |
 
-Phím tắt có thể khác tùy ứng dụng Terminal và cấu hình hệ thống.
-
-### Điều hướng và chỉnh sửa dòng lệnh
-
-Khi đang nhập lệnh trong Bash, các phím tắt mặc định giúp di chuyển con trỏ và sửa nội dung:
-
-| Phím tắt | Tác dụng |
-| --- | --- |
-| `Ctrl + A` | Đưa con trỏ về đầu dòng lệnh. |
-| `Ctrl + E` | Đưa con trỏ đến cuối dòng lệnh. |
-| `Ctrl + U` | Xóa từ vị trí con trỏ về đầu dòng. |
-| `Ctrl + K` | Xóa từ vị trí con trỏ đến cuối dòng. |
-| `Alt + B` | Di chuyển con trỏ sang trái một từ. |
-| `Alt + F` | Di chuyển con trỏ sang phải một từ. |
-
-### Lịch sử và hoàn thành tự động
-
-| Phím tắt | Tác dụng |
-| --- | --- |
-| `↑` / `↓` | Xem lệnh trước hoặc sau trong lịch sử. |
-| `Ctrl + R` | Tìm ngược một lệnh đã nhập trong lịch sử. |
-| `Tab` | Hoàn thành tên lệnh, đường dẫn hoặc đối số khi có thể. |
-
-### Tùy chỉnh cửa sổ Terminal
-
-Các phím tắt mặc định sau áp dụng cho GNOME Terminal:
-
-| Phím tắt | Tác dụng |
-| --- | --- |
-| `Ctrl + +` | Tăng kích thước chữ. |
-| `Ctrl + -` | Giảm kích thước chữ. |
-| `Ctrl + Shift + W` | Đóng tab hiện tại. |
-
-Tùy bố cục bàn phím, để gõ dấu `+` có thể cần giữ thêm `Shift`.
-
-### Sao chép và dán
-
-| Phím tắt | Tác dụng |
-| --- | --- |
-| `Ctrl + Shift + C` | Sao chép văn bản đã chọn. |
-| `Ctrl + Shift + V` | Dán văn bản từ clipboard. |
+Dấu nhắc giúp bạn nhìn nhanh mình đang dùng tài khoản nào, trên máy nào và ở thư mục nào. Khi nhập lệnh, không gõ lại dấu `$` hoặc `#`. Dùng `whoami` để kiểm tra tài khoản thực tế đang chạy lệnh.
 
 ## Cú pháp lệnh
 
-Cấu trúc cơ bản của một câu lệnh trên dòng lệnh:
+Cấu trúc thường gặp:
 
 ```text
 command [options] [arguments]
 ```
 
-- **`command`**: Tên lệnh cần thực hiện.
-- **`options`**: Tùy chọn điều chỉnh cách lệnh hoạt động.
-- **`arguments`**: Giá trị hoặc đối tượng mà lệnh xử lý, chẳng hạn tên tệp hay đường dẫn.
+Phần trong dấu `[]` có thể có hoặc không; không gõ dấu ngoặc khi chạy lệnh. Ví dụ:
+
+```bash
+ls -la /home
+```
+
+| Thành phần | Trong ví dụ | Ý nghĩa |
+| --- | --- | --- |
+| `command` | `ls` | **Làm gì?** Liệt kê tệp và thư mục. |
+| `options` | `-la` | **Làm theo cách nào?** Xem chi tiết (`-l`), gồm cả mục ẩn (`-a`). |
+| `arguments` | `/home` | **Áp dụng lên đâu?** Thư mục `/home`. |
+
+Nếu tên tệp hoặc thư mục có dấu cách, đặt đường dẫn trong dấu nháy, ví dụ `cd "My Project"`.
+
+## Phím tắt thường dùng
+
+### Điều khiển phiên shell
+
+| Phím tắt | Tác dụng |
+| --- | --- |
+| `Ctrl + C` | Ngắt lệnh đang chạy. |
+| `Ctrl + D` | Thoát phiên shell khi dòng nhập lệnh đang trống. |
+
+### Nhập và sửa lệnh
+
+Trong Bash, bạn có thể dùng:
+
+| Phím tắt | Tác dụng |
+| --- | --- |
+| `Ctrl + A` | Đưa con trỏ về đầu dòng. |
+| `Ctrl + E` | Đưa con trỏ đến cuối dòng. |
+| `Ctrl + U` | Xóa từ vị trí con trỏ về đầu dòng. |
+| `Ctrl + K` | Xóa từ vị trí con trỏ đến cuối dòng. |
+| `Alt + B` | Di chuyển sang trái một từ. |
+| `Alt + F` | Di chuyển sang phải một từ. |
+
+### Lịch sử và hoàn thành tự động
+
+| Phím tắt | Tác dụng |
+| --- | --- |
+| `↑` / `↓` | Duyệt các lệnh đã nhập. |
+| `Ctrl + R` | Tìm lệnh cũ: nhấn phím tắt rồi gõ một phần của lệnh. |
+| `Tab` | Tự hoàn thành tên lệnh hoặc đường dẫn khi có thể. |
+
+### Cửa sổ, sao chép và dán
+
+Trong GNOME Terminal:
+
+| Phím tắt | Tác dụng |
+| --- | --- |
+| `Ctrl + Shift + T` | Mở tab mới. |
+| `Ctrl + Shift + W` | Đóng tab hiện tại. |
+| `Ctrl + Shift + C` | Sao chép văn bản đã chọn. |
+| `Ctrl + Shift + V` | Dán văn bản đã sao chép. |
+| `Ctrl + +` | Tăng kích thước chữ. |
+| `Ctrl + -` | Giảm kích thước chữ. |
+
+### Xem lại lệnh và dọn màn hình
+
+| Lệnh | Tác dụng |
+| --- | --- |
+| `history` | Xem lịch sử lệnh trong Bash, hữu ích khi cần kiểm tra lại thao tác đã làm. |
+| `history 10` | Xem 10 lệnh gần nhất trong lịch sử. |
+| `clear` | Dọn phần hiển thị trong Terminal để dễ đọc; không xóa lịch sử lệnh. |
 
 ## Chuyển hướng dữ liệu và nối lệnh
 
 | Ký hiệu | Tác dụng | Ví dụ |
 | --- | --- | --- |
-| `>` | Ghi đầu ra của lệnh vào tệp; **ghi đè** nội dung cũ. | `tree data > cay.txt` |
-| `>>` | Ghi thêm đầu ra vào **cuối tệp**. | `tree data >> cay.txt` |
-| `<` | Lấy nội dung tệp làm đầu vào cho lệnh. | `cat < cay.txt` |
-| <code>&#124;</code> (pipe) | Nối đầu ra của lệnh bên trái với đầu vào của lệnh bên phải. | <code>ls -l &#124; wc -l</code> |
+| `>` | Ghi đầu ra vào tệp, **ghi đè** nội dung cũ. | `echo "Hello" > notes.txt` |
+| `>>` | Ghi thêm đầu ra vào **cuối tệp**. | `echo "Linux" >> notes.txt` |
+| `<` | Đọc dữ liệu từ tệp làm đầu vào cho lệnh. | `wc -l < notes.txt` |
+| <code>&#124;</code> (pipe) | Chuyển đầu ra của lệnh bên trái thành đầu vào của lệnh bên phải. | <code>cat notes.txt &#124; wc -l</code> |
+| `&&` | Chỉ chạy lệnh sau khi lệnh trước thành công. | `mkdir demo && cd demo` |
 
-`>` và `>>` đều tạo tệp nếu chưa có. `echo < cay.txt` không đọc nội dung tệp vì `echo` không sử dụng đầu vào thông thường. `ls -l | wc -l` đếm **số dòng đầu ra**, không nhất thiết là số tệp: kết quả có thể gồm dòng `total` và mặc định không hiện tệp ẩn.
+`>` và `>>` tạo tệp nếu chưa có. Trong các ví dụ trên, `echo` in một dòng văn bản, `cat` đọc nội dung tệp và `wc -l` đếm số dòng.
 
 ## Lệnh `man`
 
-`man` (viết tắt của *manual*) mở trang hướng dẫn cho lệnh và một số thành phần hệ thống, như lời gọi hệ thống hoặc định dạng tệp cấu hình.
+`man` (*manual*) mở trang hướng dẫn sử dụng lệnh. Ví dụ, xem cách dùng `ls`:
 
-```text
-man <tên_lệnh>
+```bash
+man ls
 ```
 
-Thay `<tên_lệnh>` bằng tên cần tra cứu, ví dụ `man ls` để xem hướng dẫn của `ls`.
+Trong trang hướng dẫn:
 
-**Điều hướng trong trang hướng dẫn:**
-
-- Nhấn `↑` hoặc `↓` để di chuyển từng dòng.
-- Nhấn `Page Up` hoặc `Page Down` để di chuyển từng trang.
-- Nhấn `q` để thoát và trở về dòng lệnh.
+| Phím | Tác dụng |
+| --- | --- |
+| `↑` / `↓` | Cuộn từng dòng. |
+| `Page Up` / `Page Down` | Cuộn từng trang. |
+| `q` | Thoát về dòng lệnh. |

@@ -2,49 +2,52 @@
 
 [← Mục lục](README.md) · [← Terminal](03-terminal.md) · [Tiếp: Thao tác tệp →](05-tep-va-thu-muc.md)
 
-## In thư mục hiện tại với `pwd`
+## Xem thư mục hiện tại với `pwd`
 
-`pwd` (*print working directory*) hiển thị đường dẫn tuyệt đối của thư mục làm việc hiện tại.
+`pwd` (*print working directory*) cho biết bạn đang ở thư mục nào bằng đường dẫn tuyệt đối.
 
 ```bash
 pwd
 ```
 
+Ví dụ kết quả:
+
+```text
+/home/user01/project
+```
+
+Trong công việc, dùng `pwd` để kiểm tra đúng project trước khi chạy lệnh tạo, sao chép hoặc xóa dữ liệu.
+
 ## Chuyển thư mục với `cd`
 
-`cd` (*change directory*) thay đổi thư mục làm việc hiện tại.
+`cd` (*change directory*) chuyển sang thư mục khác.
 
 | Ví dụ | Ý nghĩa |
 | --- | --- |
-| `cd /path/to/directory` | Chuyển đến thư mục theo đường dẫn tuyệt đối. |
-| `cd ~` | Chuyển về thư mục cá nhân của người dùng hiện tại. |
+| `cd /home/user01/project` | Chuyển đến `project` bằng đường dẫn tuyệt đối. |
+| `cd src` | Chuyển vào thư mục con `src` của thư mục hiện tại. |
 | `cd ..` | Chuyển lên thư mục cha. |
-| `cd -` | Quay lại thư mục làm việc trước đó. |
-| `cd $HOME` | Chuyển đến thư mục được chỉ bởi biến môi trường `HOME`. |
-| `cd ~john` | Chuyển đến thư mục cá nhân của người dùng `john`, nếu tài khoản tồn tại và có quyền truy cập. |
+| `cd -` | Quay lại thư mục vừa rời khỏi. |
+| `cd` hoặc `cd ~` | Về thư mục cá nhân của bạn. |
 
 ## Xem danh sách tệp với `ls`
 
-`ls` liệt kê các mục trong thư mục hiện tại. Không có tùy chọn, lệnh hiển thị tên các mục không bị ẩn.
+`ls` liệt kê tệp và thư mục con, mặc định không hiện các mục ẩn. Thêm đường dẫn để xem thư mục khác, ví dụ `ls /home`.
 
-| Tùy chọn | Tác dụng |
+| Ví dụ | Tác dụng |
 | --- | --- |
-| `-l` | Hiển thị chi tiết quyền truy cập, chủ sở hữu, kích thước và thời gian sửa đổi. |
-| `-a` | Hiển thị cả các mục có tên bắt đầu bằng dấu chấm. |
-| `-h` | Hiển thị kích thước dễ đọc theo bội số 1024 khi có cột kích thước, ví dụ `ls -lh`. |
-| `-t` | Sắp xếp theo thời gian sửa đổi, mới nhất trước. |
-| `-r` | Đảo ngược thứ tự sắp xếp hiện tại. |
-| `-R` | Liệt kê đệ quy nội dung các thư mục con. |
-| `--color=auto` | Tô màu khi hiển thị trên Terminal. |
-| `-S` | Sắp xếp theo kích thước tệp, lớn nhất trước. |
-| `-G` | Ẩn tên **nhóm** trong chế độ chi tiết, ví dụ `ls -lG`. |
-| `-i` | Hiển thị số inode của từng mục. |
-| `--group-directories-first` | Hiển thị thư mục trước các loại tệp khác. |
-| `-L` | Khi hiển thị thông tin về liên kết tượng trưng, dùng thông tin của mục mà liên kết trỏ tới. |
+| `ls -l` | Xem chi tiết quyền, chủ sở hữu, kích thước và thời gian sửa đổi. |
+| `ls -a` | Hiện cả các mục ẩn. |
+| `ls -la` | Xem chi tiết cả các mục ẩn, thường dùng để kiểm tra tệp như `.env`, `.gitignore`. |
+| `ls -lh` | Xem chi tiết, kích thước dễ đọc như `1K`, `20M`, `2G`. |
+| `ls -t` | Sắp xếp theo thời gian sửa đổi, mới nhất trước. |
+| `ls -S` | Sắp xếp theo kích thước, lớn nhất trước. |
+
+Có thể gộp các tùy chọn: `ls -lah` vừa xem chi tiết, vừa hiện mục ẩn và kích thước dễ đọc.
 
 ## Xem cây thư mục với `tree`
 
-`tree` hiển thị tệp và thư mục con theo dạng cây. Không ghi đường dẫn thì lệnh hiển thị từ thư mục hiện tại:
+`tree` hiển thị cấu trúc tệp và thư mục con dưới dạng cây:
 
 ```bash
 tree
@@ -53,29 +56,39 @@ tree
 Ví dụ kết quả:
 
 ```text
-project/
-├── src/
-│   └── app.js
-└── README.md
+.
+├── README.md
+└── src
+    └── app.js
+
+1 directory, 2 files
 ```
 
-Trên Ubuntu/Debian, nếu chưa có `tree`, cài bằng `sudo apt install tree`.
+Dấu `.` là thư mục hiện tại. Dùng `tree project` để xem cây của thư mục `project`.
+
+Nếu chưa có `tree`, trên Ubuntu/Debian có thể cài bằng `sudo apt install tree`.
 
 ## Xem dung lượng với `du`
 
-`du` (*disk usage*) ước tính dung lượng đĩa mà tệp và thư mục sử dụng. Không có đối số, lệnh thống kê thư mục hiện tại và các thư mục con.
+`du` (*disk usage*) ước tính dung lượng đĩa mà tệp hoặc thư mục sử dụng. Để xem tổng dung lượng của thư mục hiện tại:
 
 ```bash
-du
+du -sh .
 ```
 
 | Cách dùng | Kết quả |
 | --- | --- |
-| `du -h .` | Hiển thị dung lượng từng thư mục ở dạng dễ đọc (`K`, `M`, `G`). |
-| `du -sh .` | Chỉ hiển thị tổng dung lượng của thư mục hiện tại ở dạng dễ đọc. |
-| `du -sk .` | Hiển thị tổng dung lượng theo KiB. |
-| `du -sm .` | Hiển thị tổng dung lượng theo MiB. |
-| `du -s -BG .` | Hiển thị tổng dung lượng theo GiB. |
-| `du -s --si .` | Hiển thị tổng dung lượng theo đơn vị thập phân (KB, MB, GB). |
+| `du -h .` | Dung lượng thư mục hiện tại và các thư mục con, dạng `K`, `M`, `G`. |
+| `du -sh .` | Chỉ lấy tổng dung lượng của thư mục hiện tại, dạng dễ đọc. |
 
-Dấu `.` là thư mục hiện tại; có thể thay bằng đường dẫn khác. Các đơn vị `K`, `M`, `G` mặc định của `du -h` dùng bội số 1024 (KiB, MiB, GiB); `--si` dùng bội số 1000. Khi ép về một đơn vị cố định, kết quả được làm tròn lên.
+`-s` chỉ lấy tổng, `-h` hiển thị kích thước dễ đọc. Thay `.` bằng đường dẫn khác để xem thư mục đó, ví dụ `du -sh project`.
+
+## Xem dung lượng còn trống với `df`
+
+```bash
+df -h
+```
+
+Xem dung lượng đã dùng và còn trống của các hệ thống tệp đang gắn. Đọc cột `Avail` (còn trống) và `Use%` (phần trăm đã dùng) khi nghi ổ đĩa đầy.
+
+**`du` xem thư mục chiếm bao nhiêu; `df` xem hệ thống tệp còn bao nhiêu chỗ trống.**

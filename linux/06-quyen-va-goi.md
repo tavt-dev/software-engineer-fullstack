@@ -1,38 +1,59 @@
-# 6. Quyền quản trị và gói phần mềm
+# 6. Quyền truy cập và gói phần mềm
 
-[← Mục lục](README.md) · [← Thao tác tệp](05-tep-va-thu-muc.md)
+[← Mục lục](README.md) · [← Thao tác tệp](05-tep-va-thu-muc.md) · [Tiếp: Kiểm tra hệ thống →](07-kiem-tra-he-thong.md)
 
-## Lệnh `sudo`
+## Chạy lệnh quản trị với `sudo`
 
-`sudo` cho phép người dùng đã được cấp quyền chạy một lệnh dưới quyền của người dùng khác, mặc định là `root`.
+**`root`** là tài khoản quản trị có quyền cao nhất trên hệ thống. **`sudo`** cho phép người dùng đã được cấp quyền chạy một lệnh dưới quyền tài khoản khác, mặc định là `root`.
 
-Lệnh này thường dùng để cài hoặc gỡ gói phần mềm, quản lý dịch vụ và chỉnh sửa tệp cấu hình hệ thống. Chính sách `sudoers` giúp giới hạn người dùng nào được chạy lệnh nào với quyền quản trị.
+Bạn thường dùng `sudo` khi cài phần mềm, quản lý dịch vụ hoặc sửa cấu hình hệ thống.
 
-Khi cần xác thực, `sudo` thường hỏi **mật khẩu của người dùng hiện tại**, không phải mật khẩu `root`; lúc nhập, Terminal thường không hiển thị ký tự.
+Khi được hỏi, thông thường bạn nhập **mật khẩu tài khoản đang dùng**. Terminal không hiển thị ký tự khi nhập; gõ xong thì nhấn `Enter`.
 
-`sudo` có thể tạm ghi nhớ lần xác thực, nên không nhất thiết hỏi mật khẩu ở mỗi lần chạy. Việc có hỏi mật khẩu hay không phụ thuộc vào cấu hình hệ thống.
+## Đọc và sửa quyền truy cập
 
-**Ví dụ trên Ubuntu/Debian (dùng APT):**
+Dùng `ls -l config.txt` để xem quyền và chủ sở hữu. Ví dụ phần quyền `-rw-r--r--`:
 
-- `sudo apt update`: Làm mới danh sách gói và phiên bản có sẵn từ kho phần mềm; chưa nâng cấp các gói đã cài.
-- `sudo apt upgrade`: Nâng cấp các gói đã cài đủ điều kiện lên phiên bản mới có sẵn. APT sẽ hiển thị các thay đổi và có thể yêu cầu xác nhận.
+- Dấu `-` đầu tiên chỉ tệp thường.
+- Ba nhóm `rw-`, `r--`, `r--` lần lượt là quyền của **chủ sở hữu, nhóm và người khác**. Dấu `-` trong mỗi nhóm nghĩa là không có quyền đó.
 
-## Đặt mật khẩu với `passwd`
+| Quyền | Với tệp | Với thư mục |
+| --- | --- | --- |
+| `r` (read) | Đọc nội dung. | Xem tên các mục bên trong. |
+| `w` (write) | Sửa nội dung. | Tạo hoặc xóa mục bên trong, cần kèm quyền `x`. |
+| `x` (execute) | Chạy như chương trình. | Đi vào và truy cập các mục qua thư mục đó. |
 
-`passwd` dùng để đổi mật khẩu tài khoản người dùng. Cú pháp:
+| Ví dụ | Tác dụng |
+| --- | --- |
+| `chmod u+x start.sh` | Thêm quyền thực thi cho chủ sở hữu (`u`) của script. |
+| `./start.sh` | Chạy script trong thư mục hiện tại sau khi có quyền thực thi. |
+| `sudo chown user01 config.txt` | Đổi chủ sở hữu tệp thành tài khoản `user01`. |
 
-```text
-passwd [tên_người_dùng]
-```
+Khi gặp `Permission denied`, kiểm tra đúng tài khoản, chủ sở hữu và quyền trước khi thay đổi. `chmod` sửa quyền; `chown` đổi chủ sở hữu.
 
-Không ghi tên người dùng thì lệnh đổi mật khẩu của chính mình. Để đặt lại mật khẩu cho tài khoản khác cần quyền quản trị, thường dùng `sudo passwd <tên_người_dùng>`. Dấu `[]` nghĩa là tham số tùy chọn; phần trong `<>` cần thay bằng tên tài khoản, không gõ các dấu này.
+## Quản lý gói bằng APT
 
-### Đặt mật khẩu cho tài khoản `root`
+**APT** là công cụ cài đặt, nâng cấp và gỡ các gói phần mềm trên Ubuntu/Debian.
 
-`root` là tài khoản có quyền quản trị cao nhất. Trên Ubuntu, mật khẩu của `root` bị khóa theo mặc định và các tác vụ quản trị thường được thực hiện qua `sudo`. Nếu cần đặt mật khẩu cho `root`, người dùng có quyền quản trị dùng:
+| Lệnh | Tác dụng |
+| --- | --- |
+| `sudo apt update` | Cập nhật danh sách gói và phiên bản có sẵn, chưa nâng cấp phần mềm. |
+| `sudo apt upgrade` | Cài các bản cập nhật cho gói đã có. |
+| `sudo apt install tree` | Cài gói `tree`. |
+| `sudo apt remove tree` | Gỡ gói `tree`. |
 
-```bash
-sudo passwd root
-```
+Chạy `sudo apt update` trước khi cài hoặc nâng cấp để lấy danh sách gói mới.
 
-Lệnh có thể yêu cầu xác thực người dùng hiện tại, sau đó nhập và xác nhận mật khẩu mới cho `root`. Việc đặt mật khẩu sẽ mở khóa khả năng xác thực bằng mật khẩu của tài khoản `root`.
+## Đổi mật khẩu với `passwd`
+
+`passwd` dùng để đổi mật khẩu tài khoản người dùng.
+
+| Lệnh | Tác dụng |
+| --- | --- |
+| `passwd` | Đổi mật khẩu của bạn. |
+| `sudo passwd user01` | Đặt lại mật khẩu cho người dùng `user01`. |
+| `sudo passwd root` | Đặt mật khẩu cho tài khoản `root`. |
+
+Với `passwd`, bạn nhập mật khẩu hiện tại, rồi nhập mật khẩu mới hai lần để xác nhận. Khi dùng `sudo passwd user01`, bạn đặt mật khẩu mới cho `user01` mà không cần biết mật khẩu cũ của tài khoản đó.
+
+Trên Ubuntu, mật khẩu `root` bị khóa mặc định; việc quản trị thường thực hiện qua `sudo`. Đặt mật khẩu cho `root` sẽ cho phép tài khoản này xác thực bằng mật khẩu.
