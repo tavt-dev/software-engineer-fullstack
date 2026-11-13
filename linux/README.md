@@ -17,3 +17,9 @@
 | [9. Shell script](09-shell-script.md) | Shebang, cách chạy `.sh`, script kiểm tra server và tạo project | Tự động hóa các thao tác lặp lại. |
 
 **Cách dùng:** Người mới nên đọc theo thứ tự. Khi cần tra cứu, chọn bài trong bảng. Kiểm tra đường dẫn trước khi chạy lệnh thay đổi hoặc xóa dữ liệu.
+
+## Sơ đồ tổng hợp lệnh Linux
+
+[![Sơ đồ lệnh Linux cho dev: Terminal, tệp, quyền, gói phần mềm, process, mạng và service](../img/linux-commands-mindmap.png)](../img/linux-commands-mindmap.png)
+
+Khi dừng tiến trình, kiểm tra đúng PID và dùng `kill PID` trước; chỉ dùng `kill -9 PID` khi tiến trình không dừng bằng cách thông thường.
