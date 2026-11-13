@@ -67,6 +67,10 @@ Chương trình yêu cầu dịch vụ từ kernel qua **system call**, thườn
 
 **Phân biệt với container:** Mỗi VM có kernel riêng, còn các container Linux trên cùng một hệ thống chia sẻ kernel của hệ thống đó. Khi chạy container Linux trên Windows hoặc macOS, môi trường Linux này thường nằm trong một máy ảo.
 
+## Sơ đồ ôn tập
+
+[![Sơ đồ tổng quan Linux: hệ điều hành, mã nguồn mở, kernel, distro, máy ảo và ứng dụng trong công việc](../img/linux-overview-mindmap.png)](../img/linux-overview-mindmap.png)
+
 ## Tham khảo
 
 - [GNU Bash: Shell là gì?](https://www.gnu.org/software/bash/manual/html_node/What-is-a-shell_003f.html)
