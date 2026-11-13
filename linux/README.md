@@ -20,7 +20,7 @@
 
 ## Bài thực hành
 
-Bài tập buổi 7 — câu lệnh Linux cho developer. Mỗi bài có yêu cầu, cách làm, kết quả và ảnh minh chứng. Theo dõi chung tại [issue #10](https://github.com/tavt-dev/software-engineer-fullstack/issues/10).
+Bài tập buổi 7 — câu lệnh Linux cho developer. Mỗi bài có lệnh, kết quả và ảnh minh chứng. Theo dõi chung tại [issue #10](https://github.com/tavt-dev/software-engineer-fullstack/issues/10).
 
 | Bài làm | Issue |
 | --- | --- |
