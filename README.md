@@ -36,6 +36,10 @@ Ghi chép về IP, domain, DNS, URL, port, mô hình OSI, TCP/UDP và luồng tr
 
 Ghi chép về lý do Software Engineer cần học Linux, hệ điều hành, kernel, bản phân phối, máy ảo và cách ứng dụng vận hành trên server được lưu tại [phần học Linux](linux/README.md).
 
+## Học Docker
+
+Ghi chép về container, image, Docker Hub và các lệnh chạy, kiểm tra, quản lý container được lưu tại [phần học Docker](docker/README.md).
+
 ## Sơ đồ lộ trình
 
 <img src="img/software-engineer-fullstack-roadmap.jpg" alt="Sơ đồ lộ trình Software Engineer – Fullstack Developer K6" width="600">
