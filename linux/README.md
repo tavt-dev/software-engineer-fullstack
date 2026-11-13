@@ -18,6 +18,20 @@
 
 **Cách dùng:** Người mới nên đọc theo thứ tự. Khi cần tra cứu, chọn bài trong bảng. Kiểm tra đường dẫn trước khi chạy lệnh thay đổi hoặc xóa dữ liệu.
 
+## Bài thực hành
+
+Bài tập buổi 7 — câu lệnh Linux cho developer. Mỗi bài có yêu cầu, cách làm, kết quả và ảnh minh chứng. Theo dõi chung tại [issue #10](https://github.com/tavt-dev/software-engineer-fullstack/issues/10).
+
+| Bài làm | Issue |
+| --- | --- |
+| [1. Tạo môi trường project](exercise/01-tao-moi-truong-project.md) | [#12](https://github.com/tavt-dev/software-engineer-fullstack/issues/12) |
+| [2. Quản lý tệp trong backend](exercise/02-quan-ly-tep-trong-backend.md) | [#13](https://github.com/tavt-dev/software-engineer-fullstack/issues/13) |
+| [3. Tạo và đọc log](exercise/03-tao-va-doc-log.md) | [#14](https://github.com/tavt-dev/software-engineer-fullstack/issues/14) |
+| [4. Tìm kiếm trong project](exercise/04-tim-kiem-trong-project.md) | [#15](https://github.com/tavt-dev/software-engineer-fullstack/issues/15) |
+| [5. Kiểm tra công cụ dev](exercise/05-kiem-tra-cong-cu-dev.md) | [#16](https://github.com/tavt-dev/software-engineer-fullstack/issues/16) |
+| [6. Kiểm tra máy Ubuntu](exercise/06-kiem-tra-may-ubuntu.md) | [#17](https://github.com/tavt-dev/software-engineer-fullstack/issues/17) |
+| [7. Kiểm tra mạng và cổng](exercise/07-kiem-tra-mang-va-cong.md) | [#18](https://github.com/tavt-dev/software-engineer-fullstack/issues/18) |
+
 ## Tài liệu PDF
 
 - [Linux cheatsheet (PDF)](tai-lieu/linux-cheatsheet.pdf)
