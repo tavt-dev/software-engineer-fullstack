@@ -62,6 +62,10 @@ docker run -d --name mysql1011 \
 
 `-v` gắn volume lưu dữ liệu, `-e` truyền cấu hình khởi tạo, `--network` chọn mạng. Mật khẩu chỉ dùng cho lab. Đây là các mẫu của bài 3–4: cần tên container chưa được dùng và cổng host còn trống khi publish.
 
+## Tài liệu PDF
+
+- [Tài liệu Docker (PDF)](tai-lieu/docker.pdf)
+
 ## Sơ đồ Docker thực chiến
 
 [![Sơ đồ Docker với web app: dữ liệu, volume, bind mount, biến môi trường, network và các lệnh trọng tâm](../img/docker-web-app-mindmap.png)](../img/docker-web-app-mindmap.png)
