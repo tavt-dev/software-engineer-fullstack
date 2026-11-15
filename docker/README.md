@@ -62,6 +62,18 @@ docker run -d --name mysql1011 \
 
 `-v` gắn volume lưu dữ liệu, `-e` truyền cấu hình khởi tạo, `--network` chọn mạng. Mật khẩu chỉ dùng cho lab. Đây là các mẫu của bài 3–4: cần tên container chưa được dùng và cổng host còn trống khi publish.
 
+## Bài tập buổi 11
+
+- [Bài 01: Chạy Nginx bằng Docker](exercise/01-run-nginx.md)
+- [Bài 02: Bind mount HTML vào Nginx](exercise/02-bind-mount-nginx.md)
+- [Bài 03: Chạy MySQL bằng Docker](exercise/03-run-mysql.md)
+- [Bài 04: Lưu dữ liệu MySQL bằng Docker volume](exercise/04-mysql-volume.md)
+- [Bài 05: Kiểm tra container như một service](exercise/05-check-container-service.md)
+- [Bài 06: Sơ đồ web tĩnh chạy bằng Docker](exercise/06-static-web-diagram.md)
+- [Bài 07: Sơ đồ web + MySQL với Docker](exercise/07-web-mysql-diagram.md)
+- [Bài 08: Viết script kiểm tra môi trường Docker](exercise/08-docker-health-check.md)
+- [Bài 09: Kiểm tra server có web app chạy bằng Docker](exercise/09-server-audit.md)
+
 ## Tài liệu PDF
 
 - [Tài liệu Docker (PDF)](tai-lieu/docker.pdf)
