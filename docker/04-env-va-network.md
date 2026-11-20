@@ -1,6 +1,6 @@
 # 4. Cấu hình và kết nối container
 
-[← Mục lục](README.md) · [← Volume và bind mount](03-volume-va-bind-mount.md)
+[← Mục lục](README.md) · [← Volume và bind mount](03-volume-va-bind-mount.md) · [Tiếp: Dockerfile →](05-dockerfile.md)
 
 ## Biến môi trường (environment variable)
 

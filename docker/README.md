@@ -10,6 +10,7 @@ Docker giúp đóng gói, chạy và triển khai ứng dụng với môi trư�
 | [2. Các lệnh cơ bản](02-lenh-co-ban.md) | `pull`, `images`, `run`, `ps`, `logs`, `exec`, `start`, `stop`, `rm` | Chạy Nginx, kiểm tra và quản lý container. |
 | [3. Volume và bind mount](03-volume-va-bind-mount.md) | Gắn thư mục HTML vào Nginx, giữ dữ liệu MySQL bằng named volume | Hiểu dữ liệu nằm ở đâu và cách dùng lại khi thay container. |
 | [4. Env và network](04-env-va-network.md) | `-e`, `--network`, gọi container bằng tên | Tách cấu hình khỏi code và kết nối các thành phần của web app. |
+| [5. Dockerfile](05-dockerfile.md) | `FROM`, `WORKDIR`, `COPY`, `RUN`, `EXPOSE`, `CMD`, `docker build` | Tự đóng gói source code thành image và chạy web app của mình. |
 
 Ví dụ bài 2 dùng image `nginx:latest`, container tên `03112026` và cổng host `8080`. Bài 3 dùng thêm Nginx và MySQL để thực hành lưu dữ liệu.
 
